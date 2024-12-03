@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="body-kontakt">
+    <!-- Sprachumschaltung -->
+    <div class="language-toggle">
+        <label class="switch">
+            <input type="checkbox" id="languageSwitch">
+            <span class="slider round"></span>
+        </label>
+        <span id="languageLabel">Deutsch</span>
+    </div>
+
+    <!-- Hauptinhalt -->
+    <div class="content">
+        <h1 data-en="Have I piqued your interest?" data-de="Habe ich dein Interesse geweckt?">Habe ich dein Interesse geweckt?</h1>
+        <p data-en="I hope that my information has given you a good insight. If you have any further questions or specific concerns, please do not hesitate to contact me."
+           data-de="Ich hoffe, dass ich dir mit meinen Informationen einen guten Einblick geben konnte. Wenn du noch Fragen hast oder ein bestimmtes Anliegen klären möchtest, zögere bitte nicht, mich zu kontaktieren.">
+            Ich hoffe, dass ich dir mit meinen Informationen einen guten Einblick geben konnte. Wenn du noch Fragen hast oder ein bestimmtes Anliegen klären möchtest, zögere bitte nicht, mich zu kontaktieren.
+        </p>
+        <p data-en="If you are interested in a personal conversation or an interview, feel free to send me a proposal for an appointment. I look forward to finding a suitable time together and introducing myself in more detail."
+           data-de="Falls du Interesse an einem persönlichen Gespräch oder einem Vorstellungsgespräch hast, kannst du mir gerne direkt einen Terminvorschlag senden. Ich freue mich darauf, gemeinsam einen passenden Zeitpunkt zu finden und mich bei dieser Gelegenheit genauer vorzustellen.">
+            Falls du Interesse an einem persönlichen Gespräch oder einem Vorstellungsgespräch hast, kannst du mir gerne direkt einen Terminvorschlag senden. Ich freue mich darauf, gemeinsam einen passenden Zeitpunkt zu finden und mich bei dieser Gelegenheit genauer vorzustellen.
+        </p>
+        <p data-en="Let's get in touch – I look forward to your message!" data-de="Lass uns gerne in Kontakt treten – ich freue mich auf deine Nachricht!">Lass uns gerne in Kontakt treten – ich freue mich auf deine Nachricht!</p>
+    </div>
+
+    <!-- Kontaktformular -->
+    <div class="container-kontakt">
+        <h1 data-en="Contact" data-de="Kontakt">Kontakt</h1>
+        <form action="contact_with_optional_calendar.php" method="POST">
+            <!-- Benutzerinformationen -->
+            <label for="name" data-en="Name:" data-de="Name:">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Dein Name" required>
+
+            <label for="email" data-en="Email:" data-de="E-Mail:">E-Mail:</label>
+            <input type="email" id="email" name="email" placeholder="Deine E-Mail-Adresse" required>
+
+            <label for="message" data-en="Message:" data-de="Nachricht:">Nachricht:</label>
+            <textarea id="message" name="message" placeholder="Deine Nachricht..." required></textarea>
+
+            <!-- Checkbox für Terminvereinbarung -->
+            <label>
+                <input type="checkbox" id="appointmentCheckbox">
+                <span data-en="Would you like to schedule an appointment?" data-de="Möchten Sie einen Termin ausmachen?">Möchten Sie einen Termin ausmachen?</span>
+            </label>
+
+            <!-- Optionale Terminfelder -->
+            <div class="optional-fields" id="optionalFields" style="display: none;">
+                <label for="date" data-en="Date:" data-de="Datum:">Datum:</label>
+                <input type="date" id="date" name="date">
+
+                <label for="time" data-en="Time:" data-de="Uhrzeit:">Uhrzeit:</label>
+                <input type="time" id="time" name="time">
+
+                <label for="reason" data-en="Reason for Appointment:" data-de="Grund des Termins:">Grund des Termins:</label>
+                <select id="reason" name="reason">
+                    <option value="" data-en="Please select..." data-de="Bitte wählen...">Bitte wählen...</option>
+                    <option value="Beratung" data-en="Consultation" data-de="Beratung">Beratung</option>
+                    <option value="Projektbesprechung" data-en="Project Discussion" data-de="Projektbesprechung">Projektbesprechung</option>
+                    <option value="Support" data-en="Support" data-de="Support">Support</option>
+                    <option value="Sonstiges" data-en="Other" data-de="Sonstiges">Sonstiges</option>
+                </select>
+            </div>
+
+            <button type="submit" data-en="Submit" data-de="Senden">Senden</button>
+        </form>
+    </div>
+
+    <!-- Navigation -->
+    <a href="main1.html" class="link" data-en=">>Home<<" data-de=">>Startseite<<">>>Startseite<<</a>
+
+    <!-- Avatar -->
+    <img src="bilder/AvatarMaker.svg" alt="Avatar" class="avatar-bottom-right">
+
+    <!-- Sprechblase -->
+    <div id="speechBubble" class="speech-bubble"></div>
+
+    <!-- Footer -->
+    <footer>
+        <a href="seite8.html" class="link-info" data-en="Imprint" data-de="Impressum">Impressum</a>
+        <p>&copy; <span id="year"></span> Alexander Barwig. Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>

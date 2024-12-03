@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitel 4</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Sprachumschaltung -->
+    <div class="language-toggle">
+        <label class="switch">
+            <input type="checkbox" id="languageSwitch">
+            <span class="slider round"></span>
+        </label>
+        <span id="languageLabel">Deutsch</span>
+    </div>
+
+    <!-- Hauptinhalt -->
+    <div class="content">
+        <h1 data-en="Thank you for your understanding!" data-de="Vielen Dank für euer Verständnis!">Vielen Dank für euer Verständnis!</h1><br>
+        
+        <h3 data-en="Dear Visitors," data-de="Liebe Besucherinnen und Besucher,">Liebe Besucherinnen und Besucher,</h3>
+        
+        <p data-en="I would like to sincerely thank you for visiting my website, even though it is currently not fully completed. I am currently in an intensive phase of my training as an IT specialist for application development. My time is therefore limited, making it difficult for me to dedicate as much attention to finishing the website as I would like."
+           data-de="Ich möchte mich herzlich bei euch bedanken, dass ihr meine Website besucht habt, auch wenn sie aktuell noch nicht vollständig ist. Derzeit befinde ich mich in einer intensiven Phase meiner Ausbildung zum Fachinformatiker für Anwendungsentwicklung. Dadurch ist meine Zeit stark begrenzt, und es fällt mir schwer, mich so viel um die Fertigstellung der Seite zu kümmern, wie ich es gerne würde.">
+            Ich möchte mich herzlich bei euch bedanken, dass ihr meine Website besucht habt, auch wenn sie aktuell noch nicht vollständig ist. Derzeit befinde ich mich in einer intensiven Phase meiner Ausbildung zum Fachinformatiker für Anwendungsentwicklung. Dadurch ist meine Zeit stark begrenzt, und es fällt mir schwer, mich so viel um die Fertigstellung der Seite zu kümmern, wie ich es gerne würde.
+        </p>
+
+        <p data-en="This project is very close to my heart! I use every spare moment to work on the website, add new content, and continuously improve it. For me, it is not just a technical project but also an opportunity to share my ideas and journey with you."
+           data-de="Doch lasst euch gesagt sein: Dieses Projekt liegt mir sehr am Herzen! Ich nutze jede freie Minute, um an der Website weiterzuarbeiten, neue Inhalte hinzuzufügen und sie stetig zu verbessern. Es ist für mich nicht nur ein technisches Projekt, sondern auch eine Möglichkeit, meine Ideen und meinen Werdegang mit euch zu teilen.">
+            Doch lasst euch gesagt sein: Dieses Projekt liegt mir sehr am Herzen! Ich nutze jede freie Minute, um an der Website weiterzuarbeiten, neue Inhalte hinzuzufügen und sie stetig zu verbessern. Es ist für mich nicht nur ein technisches Projekt, sondern auch eine Möglichkeit, meine Ideen und meinen Werdegang mit euch zu teilen.
+        </p>
+
+        <p data-en="I appreciate your patience and understanding and hope to soon present you with a fully functional and informative website. Until then, I invite you to check back regularly – maybe a new update will already be online!"
+           data-de="Ich freue mich über eure Geduld und euer Verständnis und hoffe, euch bald eine vollständig funktionsfähige und informative Website präsentieren zu können. Bis dahin lade ich euch ein, regelmäßig vorbeizuschauen – vielleicht ist genau dann schon ein neues Update online!">
+            Ich freue mich über eure Geduld und euer Verständnis und hoffe, euch bald eine vollständig funktionsfähige und informative Website präsentieren zu können. Bis dahin lade ich euch ein, regelmäßig vorbeizuschauen – vielleicht ist genau dann schon ein neues Update online!
+        </p>
+
+        <p data-en="Thank you and see you soon!" data-de="Vielen Dank und bis bald!">Vielen Dank und bis bald!</p><br>
+
+        <p data-en="Kind regards," data-de="Mit freundlichen Grüßen">Mit freundlichen Grüßen</p>
+        <p>Alexander Barwig</p>
+
+        <p><strong data-en="Contact:" data-de="Kontakt:">Kontakt:</strong><br>
+            <a href="seite7.html" data-en="alexander.barwig87@gmail.com" data-de="alexander.barwig87@gmail.com">alexander.barwig87@gmail.com</a>
+        </p>
+    </div>
+
+    <!-- Bild -->
+    <img src="bilder/under_costruction.jpg" class="image">
+
+    <!-- Navigation -->
+    <div>
+        <a href="seite3.html" class="link-left" data-en="Why Me?" data-de="Warum ich?">Warum ich?</a>
+        <a href="#" class="link-right" data-en=">>" data-de=">>">>></a>
+        <br><br>
+        <a href="main1.html" class="link" data-en=">>Home<<" data-de=">>Startseite<<">>>Startseite<<</a>
+    </div>
+
+    <!-- Avatar -->
+    <img src="bilder/AvatarMaker.svg" alt="Avatar" class="avatar-bottom-right">
+
+    <!-- Sprechblase -->
+    <div id="speechBubble" class="speech-bubble"></div>
+
+    <!-- Footer -->
+    <footer>
+        <a href="seite7.html" class="link-info" data-en="Contact" data-de="Kontakt">Kontakt</a>
+        <a href="seite8.html" class="link-info" data-en="Imprint" data-de="Impressum">Impressum</a>
+        <p>&copy; <span id="year"></span> Alexander Barwig. Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>

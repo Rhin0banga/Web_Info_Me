@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registrierung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('white_thunder.png') no-repeat center center;
+            background-size: cover;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.781);
+            padding: 100px;
+            border-radius: 35px;
+            box-shadow: 0 0 10px rgb(0, 0, 0);
+            width: 300px;
+        }
+        .container h2 {
+            text-align: center;
+        }
+        .container form {
+            margin-bottom: 15px;
+        }
+        .container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 100px;
+        }
+        .container button {
+            width: 100%;
+            padding: 5%;
+            background-color: #3a07f3be;
+            border: none;
+            color: #fff;
+            border-radius: 100px;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: #00b327;
+        }
+        .toggle-link {
+            text-align: center;
+            color: #000000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="form-title">Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Benutzername" required>
+            <input type="password" id="password" placeholder="Passwort" required>
+            <button type="submit">Einloggen</button>
+        </form>
+
+        <form id="registerForm" style="display: none;">
+            <input type="text" id="newUsername" placeholder="Benutzername" required>
+            <input type="password" id="newPassword" placeholder="Passwort" required>
+            <button type="submit">Registrieren</button>
+        </form>
+
+        <div class="toggle-link" id="toggleForm">Registrieren</div>
+    </div> 
+    <script>
+        // Wechsel zwischen Login- und Registrierungsformular
+        const toggleLink = document.getElementById('toggleForm');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+        const formTitle = document.getElementById('form-title');
+
+        toggleLink.addEventListener('click', () => {
+            if (loginForm.style.display === 'none') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                formTitle.textContent = 'Login';
+                toggleLink.textContent = 'Registrieren';
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                formTitle.textContent = 'Registrierung';
+                toggleLink.textContent = 'Einloggen';
+            }
+        });
+
+        // Login-Formular
+        loginForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Login-Daten senden
+            const response = await fetch('http://localhost:3000/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password }),
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                window.location.href = 'main1.html'; // Falls Login erfolgreich, weiterleiten
+            } else {
+                alert('Login fehlgeschlagen: ' + result.message); // Fehlernachricht anzeigen
+                // Felder leeren
+                document.getElementById('username').value = '';
+                document.getElementById('password').value = '';
+            }
+        });
+
+        // Registrierungsformular
+        registerForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const newUsername = document.getElementById('newUsername').value;
+            const newPassword = document.getElementById('newPassword').value;
+
+            // Registrierungsdaten senden
+            const response = await fetch('http://localhost:3000/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: newUsername, password: newPassword }),
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                alert('Registrierung erfolgreich. Sie können sich jetzt einloggen.');
+                // Formular zurücksetzen und zum Login wechseln
+                document.getElementById('newUsername').value = '';
+                document.getElementById('newPassword').value = '';
+                toggleLink.click();
+            } else {
+                alert('Registrierung fehlgeschlagen: ' + result.message);
+                // Passwortfeld leeren
+                document.getElementById('newPassword').value = '';
+            }
+        });
+    </script>
+</body>
+</html>
