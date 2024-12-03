@@ -1,5 +1,5 @@
 Willkommen auf meiner Website! 🌐
-Überblick
+
 Vielen Dank, dass du meine Website besuchst! Diese Seite ist ein Projekt, das ich mit Leidenschaft und Hingabe entwickle. Hier teile ich nicht nur Informationen über mich, sondern auch Einblicke in meine berufliche Entwicklung, Projekte und meine Vision für die Zukunft.
 
 Was erwartet dich hier?
